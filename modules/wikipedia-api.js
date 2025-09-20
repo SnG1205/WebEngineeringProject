@@ -89,6 +89,7 @@ async function extractBears(wikitext) {
             let pages = await data.query.pages;
             let page = await Object.values(pages)[0];
             return await page.imageinfo[0].url;
+            //ss
             /*return fetch(URL).then(function (res) {
                 return res.json();
             }).then(function (data) {
