@@ -59,9 +59,25 @@ Fix application code and answer the questions:
 > **What bad coding practices did you find? Why is it a bad practice and how did you fix it?**
 > 
 > _Present your findings here..._
->
+> 1. Usage of `var` instead of `let`/`const` <br>
+> <b> Why a bad practice? </b> <br>
+> Unlike `const` and `let`, which are block-scoped and provide better control over variable mutability, `var` can cause unintended variable redeclarations, scope leaks, and bugs that are hard to trace. <br>
+> <b> How it was fixed? </b> <br>
+> For the variables, which were assigned with a value only once, were declared using `const` and other variables were declared using `let`. Casing (naming) for `const` variables in code can be wrong though. <br> <br>
+> 2. Long methods lacking logical separation <br>
+> <b> Why a bad practice? </b> <br>
+> Long methods that doesn't fit in a screen and require scrolling and also contain several levels of if-loops are hard to read and understand. That's why they should be 'decomposed' into smaller ones based on the functionality (implying that originally big method does more things than one) <br>
+> <b> How it was fixed? </b> <br>
+> 'Fetching bear data from wikipedia' logic serves as a great example of long methods. Initially (after separating functionality into different modules) that was a single method that fetched the data from wikipedia, split it into rows, extracted bear data from rows, fetched the image url, added it to the bear data, added bear to the list of bears and finally displayed bears on page. <br>
+> In final version the whole logic was split into several methods that are presented below in the codesnippet (full method implementation can be found in `/modules/wikipedia-api.js`):
+> 
 > ```js
-> console.log('Make use of markdown codesnippets to show and explain good/bad practices!')
+> async function fetchBears(){}
+> async function displayBears(wikitext) {}
+> async function addBears(rows) {}
+> async function addBear(row) {}
+> function addBearsAsHtml(bears, rows) {}
+> async function fetchImageUrl(fileName) {}
 > ```
 
 

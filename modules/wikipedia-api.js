@@ -11,11 +11,15 @@ const params = {
 };
 
 export async function fetchBears() {
-    let response = await fetch(BASE_URL + "?" + new URLSearchParams(params).toString());
-    let data = await response.json();
-    let someData = await data.parse.wikitext['*'];
-    console.log(someData);
-    return await displayBears(someData);
+    try{
+        let response = await fetch(BASE_URL + "?" + new URLSearchParams(params).toString());
+        let data = await response.json();
+        let parsedData = await data.parse.wikitext['*'];
+        console.log(parsedData);
+        await displayBears(parsedData);
+    } catch (e){
+        console.log(`Error fetching bear data from Wikipedia from ${BASE_URL}`, e);
+    }
 }
 
 async function displayBears(wikitext) {
@@ -28,7 +32,11 @@ async function displayBears(wikitext) {
 async function addBears(rows) {
     let rowBears = [];
     for (const row of rows) {
-        rowBears.push(await addBear(row))
+        try{
+            rowBears.push(await addBear(row));
+        } catch (e) {
+            console.log(`Error while trying to add bear for a row: ${row}`, e);
+        }
     }
 
     return rowBears;
