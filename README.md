@@ -59,6 +59,7 @@ Fix application code and answer the questions:
 > **What bad coding practices did you find? Why is it a bad practice and how did you fix it?**
 > 
 > _Present your findings here..._
+> <H2>Made by Serhii Holiev aka SnG1205</H2>
 > 1. Usage of `var` instead of `let`/`const` <br>
 > <b> Why a bad practice? </b> <br>
 > Unlike `const` and `let`, which are block-scoped and provide better control over variable mutability, `var` can cause unintended variable redeclarations, scope leaks, and bugs that are hard to trace. <br>
