@@ -15,14 +15,14 @@ export async function fetchBears() {
     let data = await response.json();
     let someData = await data.parse.wikitext['*'];
     console.log(someData);
-    return await extractBears(someData);
+    return await displayBears(someData);
 }
 
-async function extractBears(wikitext) {
+async function displayBears(wikitext) {
     const rows = wikitext.split('{{Species table/row');
     rows.shift();
     let bears = await addBears(rows);
-    displayBears(bears, rows);
+    addBearsAsHtml(bears, rows);
 }
 
 async function addBears(rows) {
@@ -54,7 +54,7 @@ async function addBear(row) {
     }
 }
 
-function displayBears(bears, rows) {
+function addBearsAsHtml(bears, rows) {
     if (bears.length === rows.length) {
         let moreBears = document.querySelector('.more_bears');
         bears.forEach((bear) => {

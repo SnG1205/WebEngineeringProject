@@ -1,5 +1,5 @@
 export function searchHighlighter(){
-    document.querySelector('.search').addEventListener('submit', function(e) {
+    document.querySelector('.search').addEventListener('submit', (e) => {
         e.preventDefault();
 
         document.querySelectorAll('.highlight').forEach(function(el) {
@@ -8,7 +8,7 @@ export function searchHighlighter(){
             parent.normalize();
         });
 
-        let searchKey = this.q.value.trim();
+        let searchKey = e.target.q.value.trim();
         if (!searchKey) return;
 
         let regex = new RegExp('(' + searchKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
@@ -27,6 +27,6 @@ export function searchHighlighter(){
             }
         }
 
-        walk(document.body);
+        document.querySelectorAll('article').forEach(article => walk(article))
     });
 }
