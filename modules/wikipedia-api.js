@@ -10,7 +10,7 @@ const params = {
     origin: "*"
 };
 
-export async function fetchBears() {
+export const fetchBears = async() => {
     try{
         let response = await fetch(BASE_URL + "?" + new URLSearchParams(params).toString());
         let data = await response.json();
@@ -22,14 +22,14 @@ export async function fetchBears() {
     }
 }
 
-async function displayBears(wikitext) {
+const displayBears = async(wikitext) => {
     const rows = wikitext.split('{{Species table/row');
     rows.shift();
     let bears = await addBears(rows);
     addBearsAsHtml(bears, rows);
 }
 
-async function addBears(rows) {
+const addBears = async(rows) => {
     let rowBears = [];
     for (const row of rows) {
         try{
@@ -42,7 +42,7 @@ async function addBears(rows) {
     return rowBears;
 }
 
-async function addBear(row) {
+const addBear = async(row) => {
     const nameMatch = row.match(/\|name=\[\[(.*?)\]\]/);
     const binomialMatch = row.match(/\|binomial=(.*?)\n/);
     const imageMatch = row.match(/\|image=(.*?)\n/);
@@ -76,7 +76,7 @@ function addBearsAsHtml(bears, rows) {
     }
 }
 
-async function fetchImageUrl(fileName) {
+const fetchImageUrl = async(fileName) => {
     const imageParams = {
         action: "query",
         titles: "File:" + fileName,
