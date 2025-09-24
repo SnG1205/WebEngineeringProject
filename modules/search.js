@@ -1,4 +1,4 @@
-export function searchHighlighter(){
+export const searchHighlighter = () =>{
     document.querySelector('.search').addEventListener('submit', (e) => {
         e.preventDefault();
 

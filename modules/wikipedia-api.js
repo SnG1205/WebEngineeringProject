@@ -62,7 +62,7 @@ const addBear = async(row) => {
     }
 }
 
-function addBearsAsHtml(bears, rows) {
+const addBearsAsHtml = (bears, rows) => {
     if (bears.length === rows.length) {
         let moreBears = document.querySelector('.more_bears');
         bears.forEach((bear) => {

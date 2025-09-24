@@ -1,4 +1,4 @@
-export function commentToggle(){
+export const commentToggle = () => {
     const showHideBtn = document.querySelector('.show-hide');
     const commentWrapper = document.querySelector('.comment-wrapper');
     let isHidden = true;

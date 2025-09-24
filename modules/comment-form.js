@@ -1,4 +1,4 @@
-export function displayCommentForm(){
+export const displayCommentForm=  () => {
     const form = document.querySelector('.comment-form');
     const list = document.querySelector('.comment-container');
     let nameField = document.querySelector('#name');
