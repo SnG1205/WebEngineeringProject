@@ -10,7 +10,19 @@
     "lint": "eslint modules/*.{js,ts}",
     "lint:fix": "eslint modules/*.{js,ts} --fix",
     "format": "prettier --write modules/*.{js,ts}",
-    "format:check": "prettier --check modules/*.{js,ts}"
+    "format:check": "prettier --check modules/*.{js,ts}",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "modules/*.{js,ts}": [
+      "npm run lint:fix",
+      "npm run format"
+    ]
   },
   "type": "module",
   "keywords": [],
@@ -19,6 +31,8 @@
   "devDependencies": {
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^8.0.0",
+    "lint-staged": "^16.2.4",
     "prettier": "^3.6.2",
     "vite": "^7.1.9"
   },
