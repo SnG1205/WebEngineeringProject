@@ -17,7 +17,6 @@ export const fetchBears = async (): Promise<void> => {
     );
     const data = await response.json();
     const parsedData = (await data.parse.wikitext['*']) as string;
-    //console.log(parsedData);
     await displayBears(parsedData);
   } catch (e) {
     console.log(`Error fetching bear data from Wikipedia from ${BASE_URL}`, e);
@@ -49,10 +48,9 @@ const addBear = async (row: string): Promise<Bear> => {
   const binomialMatch: string = row.match(/\|binomial=(.*?)\n/)[1];
   const imageMatch: string = row.match(/\|image=(.*?)\n/)[1];
   const rangeMatch: string = row.match(/\|range=([^|\n]+)/)[1];
-  //console.log(imageMatch);
 
   if (areNotNulls(nameMatch, binomialMatch, imageMatch, rangeMatch)) {
-    const fileName = imageMatch[1].trim().replace('File:', '');
+    const fileName = imageMatch.trim().replace('File:', '');
     const imageUrl = await fetchImageUrl(fileName);
 
     return {
@@ -102,12 +100,12 @@ const fetchImageUrl = async (fileName: string): Promise<string> => {
 
   try {
     const response = await fetch(url);
-    //console.log(response);
     const data = await response.json();
-    console.log(data);
-    const pages = data.query.pages;
-    const page = await Object.values(pages)[0] as any; // TODO probably change to normal
-    return await page.imageinfo[0].url;
+    const pages: WikiQueryResponse = data.query.pages;
+    console.log(pages);
+    const pagesArray: WikiPage[] = Object.values(pages);
+    const firstPage = pagesArray[0];
+    return firstPage.imageinfo[0].url;
   } catch (error) {
     console.log('Error fetching image URL:', error);
     return 'media/placeholder.png';
