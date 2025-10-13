@@ -1,8 +1,8 @@
 export const displayCommentForm=  () => {
-    const form = document.querySelector('.comment-form');
-    const list = document.querySelector('.comment-container');
-    let nameField = document.querySelector('#name');
-    let commentField = document.querySelector('#comment');
+    const form = document.querySelector('.comment-form') as HTMLFormElement;
+    const list = document.querySelector('.comment-container') as HTMLUListElement;
+    let nameField = document.querySelector('#name') as HTMLInputElement;
+    let commentField = document.querySelector('#comment') as HTMLInputElement;
 
     form.onsubmit = (e) => {
         e.preventDefault();
@@ -31,6 +31,6 @@ export const displayCommentForm=  () => {
     };
 }
 
-function isEmpty(text){
+function isEmpty(text: string){
     return (text.replace(/\s/g, '').length === 0)
 }

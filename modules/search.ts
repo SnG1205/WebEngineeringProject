@@ -1,5 +1,5 @@
 export const searchHighlighter = () =>{
-    document.querySelector('.search').addEventListener('submit', (e) => {
+    document.querySelector('.search').addEventListener('submit', (e: SubmitEvent) => {
         e.preventDefault();
 
         document.querySelectorAll('.highlight').forEach(function(el) {
@@ -8,12 +8,13 @@ export const searchHighlighter = () =>{
             parent.normalize();
         });
 
-        let searchKey = e.target.q.value.trim();
+        let target = e.target as HTMLFormElement;
+        let searchKey : string = target.q.value.trim();
         if (!searchKey) return;
 
         let regex = new RegExp('(' + searchKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
 
-        function walk(node) {
+        function walk(node: HTMLElement) {
             if (node.nodeType === 3) { // Text node
                 let match = node.nodeValue.match(regex);
                 if (match) {

@@ -1,11 +1,11 @@
 const BASE_URL = "https://en.wikipedia.org/w/api.php";
 const TITLE = "List_of_ursids";
 
-const params = {
+const params : Record<string, string> = {
     action: "parse",
     page: TITLE,
     prop: "wikitext",
-    section: 3,
+    section: "3",
     format: "json",
     origin: "*"
 };
@@ -77,7 +77,7 @@ const addBearsAsHtml = (bears, rows) => {
 }
 
 const fetchImageUrl = async(fileName) => {
-    const imageParams = {
+    const imageParams: Record<string, string> = {
         action: "query",
         titles: "File:" + fileName,
         prop: "imageinfo",
@@ -91,7 +91,7 @@ const fetchImageUrl = async(fileName) => {
         let response = (await fetch(url));
         let data = await response.json();
         let pages = await data.query.pages;
-        let page = await Object.values(pages)[0];
+        let page = await Object.values(pages)[0] as any; //TODO probably change to normal
         return await page.imageinfo[0].url;
     } catch (error) {
         console.log('Error fetching image URL:', error);
