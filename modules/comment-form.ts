@@ -1,8 +1,10 @@
 export const displayCommentForm = (): void => {
-  const form: HTMLFormElement = document.querySelector('.comment-form');
-  const list: HTMLUListElement = document.querySelector('.comment-container');
-  const nameField: HTMLInputElement = document.querySelector('#name');
-  const commentField: HTMLInputElement = document.querySelector('#comment');
+  const form: HTMLFormElement | null = document.querySelector('.comment-form');
+  const list: HTMLUListElement | null =
+    document.querySelector('.comment-container');
+  const nameField: HTMLInputElement | null = document.querySelector('#name');
+  const commentField: HTMLInputElement | null =
+    document.querySelector('#comment');
 
   form.onsubmit = (e) => {
     e.preventDefault();

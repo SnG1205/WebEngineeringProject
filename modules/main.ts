@@ -10,4 +10,6 @@ const init = async (): Promise<void> => {
   await fetchBears();
 };
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', () => {
+  void init();
+});
