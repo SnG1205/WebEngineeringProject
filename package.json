@@ -13,6 +13,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.6.2",
     "vite": "^7.1.9"
+  },
+  "dependencies": {
+    "eslint-config-standard-with-typescript": "^43.0.1"
   }
 }

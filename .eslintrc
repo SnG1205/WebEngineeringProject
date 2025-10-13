@@ -1,0 +1,5 @@
+"extends":
+  - standard-with-typescript
+  - plugin:@typescript-eslint/recommended
+  - plugin:prettier/recommended
+  - prettier
