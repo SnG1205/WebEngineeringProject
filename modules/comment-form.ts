@@ -1,8 +1,8 @@
 export const displayCommentForm=  () => {
-    const form = document.querySelector('.comment-form') as HTMLFormElement;
-    const list = document.querySelector('.comment-container') as HTMLUListElement;
-    let nameField = document.querySelector('#name') as HTMLInputElement;
-    let commentField = document.querySelector('#comment') as HTMLInputElement;
+    const form: HTMLFormElement = document.querySelector('.comment-form');
+    const list: HTMLUListElement = document.querySelector('.comment-container');
+    let nameField: HTMLInputElement = document.querySelector('#name');
+    let commentField: HTMLInputElement = document.querySelector('#comment');
 
     form.onsubmit = (e) => {
         e.preventDefault();

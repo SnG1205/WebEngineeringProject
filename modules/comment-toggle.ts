@@ -1,6 +1,6 @@
 export const commentToggle = () => {
-    const showHideBtn = document.querySelector('.show-hide') as HTMLButtonElement;
-    const commentWrapper = document.querySelector('.comment-wrapper') as HTMLDivElement;
+    const showHideBtn: HTMLButtonElement = document.querySelector('.show-hide');
+    const commentWrapper: HTMLDivElement = document.querySelector('.comment-wrapper');
     let isHidden = true;
 
     commentWrapper.style.display = 'none';
