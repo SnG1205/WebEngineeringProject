@@ -3,7 +3,8 @@ export default {
     base: '/WebEngineeringProject/',
     build: {
         outDir: 'dist',
-        emptyOutDir: true
+        emptyOutDir: true,
+        minify: 'esbuild'
     },
     server: {
         open: true
