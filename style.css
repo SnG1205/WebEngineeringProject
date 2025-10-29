@@ -52,7 +52,7 @@ p, li, table {
 /* || header layout */
 
 div[class="nav"], article, footer, .secondary {
-  background-color: green;
+  background-color: #8FFF8F;
 }
 
 article, footer, .secondary {
@@ -65,7 +65,7 @@ article {
 
 div[class="nav"] {
   height: 50px;
-  background-color: ff80ff;
+  background-color: #8FFF8F;
   display: flex;
   padding: 1% 0;
   margin-bottom: 10px;
@@ -89,7 +89,7 @@ div[class="nav"] a {
   font-size: 2rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: black;
+  color: #242424;
 }
 
 div[class="nav"] .search {
@@ -98,6 +98,11 @@ div[class="nav"] .search {
   align-items: center;
   height: 100%;
   padding: 0 2em;
+}
+
+div[class="header"] {
+    background-color: #444488;
+    color: #E8E8E8;
 }
 
 .search input {
