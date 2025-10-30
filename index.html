@@ -31,8 +31,8 @@
       </ul>
 
       <form class="search">
-        <input type="search" name="q" placeholder="Search query">
-        <input type="submit" value="Go!">
+        <input aria-label="Search the website by text" type="search" name="q" placeholder="Search query">
+        <input aria-label="Find by text query" type="submit" value="Go!">
       </form>
     </div>
 
@@ -120,12 +120,12 @@
             <font size="6">Add comment</font>
             <form class="comment-form">
               <div class="flex-pair">
-                Your name:
-                <input type="text" name="name" id="name" placeholder="Enter your name">
+                  <label for="name-field">Your name:</label>
+                <input type="text" name="name" id="name-field" aria-labelledby="name-field" placeholder="Enter your name">
               </div>
               <div class="flex-pair">
-                Your comment:
-                <input type="text" name="comment" id="comment" placeholder="Enter your comment">
+                <label for="comment-field">Your comment:</label>
+                <input type="text" name="comment" id="comment-field" aria-labelledby="comment-field" placeholder="Enter your comment">
               </div>
               <div>
                 <input type="submit" value="Submit comment">

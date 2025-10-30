@@ -163,7 +163,9 @@ Additionally, refactor your project by encapsulating the comments section into a
 > <H2> Audio </H2>
 > WAVE marks absence of transcript for the audio as an alert. According to the provided reference, suggested solution is: "For audio-only content, ensure that a transcript is provided". <br>
 > Based on this information, I researched a bit to find a proper way to include transcript of the audio and ended up with usage of details with an id, while also linking and audio with 'aria-describedby' attribute, which refers to an id of 'details'.
-
+> <H2> Forms </H2>
+> 1. Since task requires to provide a tag, which would be accessible to screen reader and won`t be visible on the webpage, there were 2 options to choose from: Create a label and make it invisible and later use `aria-labelledby` using this label or simply using aria-label for search input. I decided to go 2nd option,  since I didn`t see any significant advantages of one option over the other, so I chose one that required less changes. So, changes were straightforward and I simply added `aria-label` to both search field and submit button. <br>
+> 2. In scope of this sub-task, WAVE errors regarding absence of label for input fields were also solved as part of the solution. So, firstly I wrapped text before input fields in label with `for` attribute, which referenced the ids of input fields. Thanks to this, text also was styled as defined in .css file for labels of .comment-form class. Lastly, `aria-labelledby` attribute was used for input fields to fix WAVE errors, which referenced the id of input field, id of fields was adjust to make sense in case it is read by screen reader.
  
 
 ## 4. Migrate to a Frontend Framework
