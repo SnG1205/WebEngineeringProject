@@ -159,7 +159,11 @@ Additionally, refactor your project by encapsulating the comments section into a
 > <H3> Fix </H3>
 > WAVE extension offers 2 slider for the element, which contains contrast color error: 1 for the background color and 1 for the foreground (text) color. Down below is a screenshot of this tool: <br>
 > <img src="docs/color_contrast.png"> <br>
-> As it can be seen, in the bottom there is "WCAG AA" and "WCAG AAA" checks that can be either in "Pass" or "Fail" state. State changes according to the color changes, which can be done by using slider. After "playing" with a slider for a while, hex-values for backgrounds and foregrounds were saved and applied to needed classes in .css file (while not only passing the checks, but also trying to make website look acceptable). Almost all the errors were fixed by applying proper colors to the div[class='nav'] (can change in the next commits if I decide to make website more sophisticated and appealing.
+> As it can be seen, in the bottom there is "WCAG AA" and "WCAG AAA" checks that can be either in "Pass" or "Fail" state. State changes according to the color changes, which can be done by using slider. After "playing" with a slider for a while, hex-values for backgrounds and foregrounds were saved and applied to needed classes in .css file (while not only passing the checks, but also trying to make website look acceptable). Almost all the errors were fixed by applying proper colors to the div[class='nav'] (can change in the next commits if I decide to make website more sophisticated and appealing).
+> <H2> Audio </H2>
+> WAVE marks absence of transcript for the audio as an alert. According to the provided reference, suggested solution is: "For audio-only content, ensure that a transcript is provided". <br>
+> Based on this information, I researched a bit to find a proper way to include transcript of the audio and ended up with usage of details with an id, while also linking and audio with 'aria-describedby' attribute, which refers to an id of 'details'.
+
  
 
 ## 4. Migrate to a Frontend Framework
