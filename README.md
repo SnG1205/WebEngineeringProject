@@ -153,9 +153,13 @@ Additionally, refactor your project by encapsulating the comments section into a
 * (6) Create a web component for the "Add comment" section. Use te shadow DOM and <code>template</code> syntax to encapsulate all related styles inside the component. 
 
 
-> 
-> _Present your findings here..._
 >
+> <H2> Color accessibility </H2>
+> After enabling WAVE extension in Chrome for the website, 44 "very low color contrast" errors were identified, while most of them were related to the text on dark green background, which means that many errors could be fixed by simply adjusting color of background or color of all the text (if applicable)
+> <H3> Fix </H3>
+> WAVE extension offers 2 slider for the element, which contains contrast color error: 1 for the background color and 1 for the foreground (text) color. Down below is a screenshot of this tool: <br>
+> <img src="docs/color_contrast.png"> <br>
+> As it can be seen, in the bottom there is "WCAG AA" and "WCAG AAA" checks that can be either in "Pass" or "Fail" state. State changes according to the color changes, which can be done by using slider. After "playing" with a slider for a while, hex-values for backgrounds and foregrounds were saved and applied to needed classes in .css file (while not only passing the checks, but also trying to make website look acceptable). Almost all the errors were fixed by applying proper colors to the div[class='nav'] (can change in the next commits if I decide to make website more sophisticated and appealing.
  
 
 ## 4. Migrate to a Frontend Framework
