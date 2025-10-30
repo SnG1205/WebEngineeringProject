@@ -10,10 +10,12 @@ export const commentToggle = (): void => {
     if (isHidden) {
       showHideBtn.textContent = 'Hide comments';
       commentWrapper.style.display = 'block';
+      showHideBtn.setAttribute('aria-expanded', 'true');
       isHidden = !isHidden;
     } else {
       showHideBtn.textContent = 'Show comments';
       commentWrapper.style.display = 'none';
+      showHideBtn.setAttribute('aria-expanded', 'false');
       isHidden = !isHidden;
     }
   };
