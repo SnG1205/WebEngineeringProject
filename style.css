@@ -148,6 +148,12 @@ table {
   border-collapse: collapse;
 }
 
+table caption {
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+}
+
 th, td {
   padding: 10px;
 }
