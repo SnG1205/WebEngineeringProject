@@ -176,7 +176,10 @@ Additionally, refactor your project by encapsulating the comments section into a
 > Show/hide comment button was not keyboard-accessible since in html it was simply written as text in a div with a class 'show-hide` and then it was treated as button inside a .ts file, which is responsible for showing/hiding comments. In order to fix this problem, a button was created inside of this div and `show-hide` class was also moved to be an attribute of the button. This way button became accessible. To provide more accessibility, additionally `aria-controls` and `aria-expanded` attributes were added to the button. Code in .ts file was also modified to adapt `aria-expanded` attribute value based on the state of the button.
 > <H2> Table </H2>
 > First of all, table is missing a summary or a caption that would explain what purpose the table serves. To fix this issue, a `caption` element with brief explanation was added to the table. Short css class was created to make caption invisible on screen for users. Additionally, a label was added to table that contains name of the table. Secondly, data wasn`t properly associated in the table: headers were implemented as simple table-data (td) elements. In order to resolve that, headers were simply initialized as `th` elements with column-scope. Rest remained unchanged.
->
+> <H2> Add Comment Section </H2>
+> Creation of web component for "add comment" section was pretty straightforward: <br>
+> 1. All HTML-elements, which were related to this section, were moved to a separate `template` element and all CSS-classes, which were assigned to the elements, were also moved to this `template`. <br>
+> 2. Existing logic in comment-form.ts was moved from displayCommentForm() to class definition for customElements. Content of previously defined template was attached to this shadow root. The biggest issue was solving errors for `form` elements (also form itself with its onSubmit). Since now elements, which were used in the form, were moved to template and attached to shadow root, they no longer existed in `document`, so calling querySelector() on it was resulting in error. To solve this issue, `document` was simply substituted with `shadowRoot` and after that task was completed.
 
 ## 4. Migrate to a Frontend Framework
 In this playground you will migrate your application to a frontend framework of your choice.
