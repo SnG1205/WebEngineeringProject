@@ -122,28 +122,7 @@
           </div>
 
           <div class="comment-wrapper">
-            <font size="6">Add comment</font>
-            <form class="comment-form">
-              <div class="flex-pair">
-                  <label for="name-field">Your name:</label>
-                <input type="text" name="name" id="name-field" aria-labelledby="name-field" placeholder="Enter your name">
-              </div>
-              <div class="flex-pair">
-                <label for="comment-field">Your comment:</label>
-                <input type="text" name="comment" id="comment-field" aria-labelledby="comment-field" placeholder="Enter your comment">
-              </div>
-              <div>
-                <input type="submit" value="Submit comment">
-              </div>
-            </form>
-
-            <font size="6">Comments</font>
-            <ul class="comment-container">
-              <li>
-                <p>Bob Fossil</p>
-                <p>Oh I am so glad you taught me all about the big brown angry guys...</p>
-              </li>
-            </ul>
+            <add-comment-section></add-comment-section>
           </div>
         </section>
 
@@ -171,3 +150,81 @@
     <script type="module" src="modules/main.ts"></script>
   </body>
 </html>
+
+<template id="add-comment">
+    <style>
+        .comment-form {
+            margin-bottom: 3rem;
+        }
+        .comment-form .flex-pair {
+            display: flex;
+            padding: 0 3rem 1rem;
+        }
+        .comment-form input[type="submit"] {
+            width: 30%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .comment-form label {
+            align-self: center;
+            flex: 2;
+            text-align: right;
+        }
+
+        .comment-form input {
+            margin-left: 1rem;
+            flex: 6;
+        }
+
+        .comment-form input, .comment-form label{
+            font-size: 1.6rem;
+            line-height: 32px;
+        }
+
+        .comment-form input[type="submit"]{
+            background: #333;
+            border: 0;
+            color: white;
+        }
+
+        .comment-container {
+            margin-top: 0;
+        }
+
+        .comment-container li {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .comment-container li p:nth-child(1) {
+            flex: 1;
+            font-weight: bold;
+        }
+
+        .comment-container li p:nth-child(2) {
+            flex: 5;
+        }
+    </style>
+    <font size="6">Add comment</font>
+    <form class="comment-form">
+        <div class="flex-pair">
+            <label for="name-field">Your name:</label>
+            <input type="text" name="name" id="name-field" aria-labelledby="name-field" placeholder="Enter your name">
+        </div>
+        <div class="flex-pair">
+            <label for="comment-field">Your comment:</label>
+            <input type="text" name="comment" id="comment-field" aria-labelledby="comment-field" placeholder="Enter your comment">
+        </div>
+        <div>
+            <input type="submit" value="Submit comment">
+        </div>
+    </form>
+    <font size="6">Comments</font>
+    <ul class="comment-container">
+        <li>
+            <p>Bob Fossil</p>
+            <p>Oh I am so glad you taught me all about the big brown angry guys...</p>
+        </li>
+    </ul>
+</template>
