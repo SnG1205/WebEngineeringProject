@@ -161,7 +161,8 @@ Additionally, refactor your project by encapsulating the comments section into a
 > <img src="docs/color_contrast.png"> <br>
 > As it can be seen, in the bottom there is "WCAG AA" and "WCAG AAA" checks that can be either in "Pass" or "Fail" state. State changes according to the color changes, which can be done by using slider. After "playing" with a slider for a while, hex-values for backgrounds and foregrounds were saved and applied to needed classes in .css file (while not only passing the checks, but also trying to make website look acceptable). Almost all the errors were fixed by applying proper colors to the div[class='nav'] (can change in the next commits if I decide to make website more sophisticated and appealing).
 > <H2> Semantic HTML </H2> 
-> 
+> While trying to navigate the website with screen reader, it is clear that all the text (even the headings) are read as plain text and it is indistinguishable from text in `p` elements. Only things that are being properly announced are: unordered list (home, our team etc.), related section, footer. After running WAVE analysis once again and observing the structure of the webpage, it becomes clear that only these elements are semantically properly implemented. Down below is the structure of webpage: <br>
+> <img src="docs/semantic_structure_old.png">
 > <H3> Fix </H3>
 > Various elements in HTML, which are supposed to be different headings (H1, H2, H3), are simply implemented with different font sizes as attributes, so they are treated as plain text. In order to fix that, every occurrence of `font` HTML-element was replaced with corresponding heading, based on the font size, which was given. Additionally, .css file was modified to remain the same website appearance as it was before changes. Updated structure after changes looks as following: <br>
 > <img src="docs/semantic_structure_new.png">
