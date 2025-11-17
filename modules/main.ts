@@ -1,7 +1,6 @@
 import { displayCommentForm } from './comment-form';
 import { commentToggle } from './comment-toggle';
 import { searchHighlighter } from './search';
-import { fetchBears } from './wikipedia-api';
 import { mount } from 'svelte';
 import Secondary from '../src/components/Secondary.svelte';
 import Table from '../src/components/Table.svelte';
@@ -13,7 +12,6 @@ const init = async (): Promise<void> => {
   searchHighlighter();
   displayCommentForm();
   commentToggle();
-  await fetchBears();
 };
 
 document.addEventListener('DOMContentLoaded', () => {

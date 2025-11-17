@@ -10,7 +10,23 @@ const params: Record<string, string> = {
   origin: '*',
 };
 
-export const fetchBears = async (): Promise<void> => {
+let unparsedBears: string[] = [];
+
+export const addBears = async (): Promise<Bear[]> => {
+  await fetchBears();
+  const bears: Bear[] = [];
+  for (const bear of unparsedBears) {
+    try {
+      bears.push(await addBear(bear));
+    } catch (e) {
+      console.log(`Error while trying to add bear for a row: ${bear}`, e);
+    }
+  }
+
+  return bears;
+};
+
+const fetchBears = async (): Promise<void> => {
   try {
     const response = await fetch(
       BASE_URL + '?' + new URLSearchParams(params).toString()
@@ -26,21 +42,7 @@ export const fetchBears = async (): Promise<void> => {
 const displayBears = async (wikitext: string): Promise<void> => {
   const rows: string[] = wikitext.split('{{Species table/row');
   rows.shift();
-  const bears: Bear[] = await addBears(rows);
-  addBearsAsHtml(bears, rows);
-};
-
-const addBears = async (rows: string[]): Promise<Bear[]> => {
-  const rowBears: Bear[] = [];
-  for (const row of rows) {
-    try {
-      rowBears.push(await addBear(row));
-    } catch (e) {
-      console.log(`Error while trying to add bear for a row: ${row}`, e);
-    }
-  }
-
-  return rowBears;
+  unparsedBears = rows;
 };
 
 const addBear = async (row: string): Promise<Bear> => {
@@ -59,31 +61,6 @@ const addBear = async (row: string): Promise<Bear> => {
       imageUrl,
       rangeMatch,
     };
-  }
-};
-
-const addBearsAsHtml = (bears: Bear[], rows: string[]): void => {
-  if (bears.length === rows.length) {
-    const moreBears = document.querySelector('.more_bears');
-    bears.forEach((bear) => {
-      const html =
-        '<div class="bear">' +
-        '<img src="' +
-        bear.imageUrl +
-        '" alt="Image of ' +
-        bear.nameMatch +
-        '" style="width:200px; height:auto;">' +
-        '<p><b>' +
-        bear.nameMatch +
-        '</b> (' +
-        bear.binomialMatch +
-        ')</p>' +
-        '<p>Range: ' +
-        bear.rangeMatch +
-        '</p>' +
-        '</div>';
-      moreBears.innerHTML += html;
-    });
   }
 };
 
