@@ -29,12 +29,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@tsconfig/svelte": "^5.0.5",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-config-standard-with-typescript": "^43.0.1",
     "eslint-plugin-prettier": "^5.5.4",
     "husky": "^8.0.0",
     "lint-staged": "^16.2.4",
     "prettier": "^3.6.2",
-    "vite": "^7.1.9",
-    "eslint-config-standard-with-typescript": "^43.0.1"
+    "svelte": "^5.43.8",
+    "vite": "7.1.11"
   }
 }

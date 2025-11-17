@@ -8,5 +8,7 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
   },
-  "include": ["modules/*.ts", "index.html"],
+  "include": ["modules/*.ts", "index.html",
+    "src/components/*.svelte"
+  ],
 }
