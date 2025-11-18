@@ -1,4 +1,6 @@
 <script lang="ts">
+    import AddCommentsSection from './AddCommentsSection.svelte';
+
     let isNotDisplayed = $state(true);
     let buttonText = $state('Show comments');
     let isExpanded = $state(false);
@@ -24,7 +26,7 @@
     </div>
 
     <div class="{isNotDisplayed ? 'comment-wrapper-hidden' : 'comment-wrapper'}" id="comment-wrapper">
-        <p> it works!!!!</p>
+        <AddCommentsSection />
     </div>
 </section>
 

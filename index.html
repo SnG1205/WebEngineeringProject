@@ -49,12 +49,7 @@
           <p>Evan Wild is an unemployed plumber from Doncaster...</p>
         </aside>
 
-        <div id="comment-section">
-
-          <div class="comment-wrapper" id="comment-wrapper">
-            <add-comment-section></add-comment-section>
-          </div>
-        </div>
+        <div id="comment-section"></div>
 
         <div class="more_bears" id="more-bears"></div>
       </article>
@@ -69,101 +64,3 @@
     <script type="module" src="modules/main.ts"></script>
   </body>
 </html>
-
-<template id="add-comment">
-    <style>
-        H2 {
-            font-family: 'Sonsie One', cursive;
-            color: #2a2a2a;
-            font-size: 2rem;
-            text-align: center;
-        }
-
-        H2:nth-of-type(2){
-            margin-bottom: 0;
-        }
-
-        p {
-            font-family: 'Open Sans Condensed', sans-serif;
-            font-size: 1.6rem;
-            color: #2a2a2a;
-            line-height: 1.5;
-        }
-
-        .comment-form {
-            margin-bottom: 3rem;
-        }
-
-        .comment-form .flex-pair {
-            display: flex;
-            padding: 0 3rem 1rem;
-        }
-
-        .comment-form input[type="submit"] {
-            width: 30%;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .comment-form label {
-            align-self: center;
-            flex: 2;
-            text-align: right;
-        }
-
-        .comment-form input {
-            margin-left: 1rem;
-            flex: 6;
-        }
-
-        .comment-form input, .comment-form label{
-            font-size: 1.6rem;
-            line-height: 32px;
-        }
-
-        .comment-form input[type="submit"]{
-            background: #333;
-            border: 0;
-            color: white;
-        }
-
-        .comment-container {
-            margin-top: 0;
-        }
-
-        .comment-container li {
-            list-style-type: none;
-            display: flex;
-        }
-
-        .comment-container li p:nth-child(1) {
-            flex: 1;
-            font-weight: bold;
-        }
-
-        .comment-container li p:nth-child(2) {
-            flex: 5;
-        }
-    </style>
-    <H2>Add comment</H2>
-    <form class="comment-form">
-        <div class="flex-pair">
-            <label for="name-field">Your name:</label>
-            <input type="text" name="name" id="name-field" aria-labelledby="name-field" placeholder="Enter your name">
-        </div>
-        <div class="flex-pair">
-            <label for="comment-field">Your comment:</label>
-            <input type="text" name="comment" id="comment-field" aria-labelledby="comment-field" placeholder="Enter your comment">
-        </div>
-        <div>
-            <input type="submit" value="Submit comment">
-        </div>
-    </form>
-    <H2 tabindex="0">Comments</H2>
-    <ul class="comment-container">
-        <li>
-            <p>Bob Fossil</p>
-            <p>Oh I am so glad you taught me all about the big brown angry guys...</p>
-        </li>
-    </ul>
-</template>

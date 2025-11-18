@@ -1,4 +1,3 @@
-import { displayCommentForm } from './comment-form';
 import { searchHighlighter } from './search';
 import { mount } from 'svelte';
 import Secondary from '../src/components/Secondary.svelte';
@@ -10,7 +9,6 @@ import CommentsSection from '../src/components/CommentsSection.svelte';
 
 const init = async (): Promise<void> => {
   searchHighlighter();
-  displayCommentForm();
 };
 
 document.addEventListener('DOMContentLoaded', () => {
