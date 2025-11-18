@@ -8,59 +8,28 @@
     <style>
       body { font-family: Arial, sans-serif; }
       .highlight { background-color: yellow; color: black; }
-      .comment-wrapper { display: block; }
     </style>
   </head>
   <body>
+  <div class="header">
+      <h1>Welcome to our wildlife website</h1>
+  </div>
 
-    <!--
-      BEGIN:
-        Beautiful HTML markup
-    -->
-
-    <div class="header">
-      <H1>Welcome to our wildlife website</H1>
-    </div>
-
-    <div class="nav">
+  <div class="nav">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Our team</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Blog</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Our team</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Blog</a></li>
       </ul>
 
       <form class="search">
-        <input aria-label="Search the website by text" type="search" name="q" placeholder="Search query">
-        <input aria-label="Find by text query" type="submit" value="Go!">
+          <input aria-label="Search the website by text" type="search" name="q" placeholder="Search query">
+          <input aria-label="Find by text query" type="submit" value="Go!">
       </form>
-    </div>
+  </div>
 
-    <main>
-      <article>
-        <div id="table"></div>
-
-        <div id="habitats-section"></div>
-
-        <div id="audio-section"></div>
-
-        <aside>
-          <H3 tabindex="0">About the author</H3>
-          <p>Evan Wild is an unemployed plumber from Doncaster...</p>
-        </aside>
-
-        <div id="comment-section"></div>
-
-        <div class="more_bears" id="more-bears"></div>
-      </article>
-
-      <div class="secondary" id="secondary"></div>
-    </main>
-
-    <footer>
-      <p>©Copyright by nobody (brother of somebody and anybody, member of Everybody family). All rights are NOT reserved.</p>
-    </footer>
-
+  <div id="app"></div>
     <script type="module" src="modules/main.ts"></script>
   </body>
 </html>
