@@ -8,6 +8,12 @@
     import Table from "./components/Table.svelte";
 </script>
 
+<div class="header">
+    <h1>Welcome to our wildlife website</h1>
+</div>
+
+<Navigation />
+
 <main>
     <article>
         <Table />
@@ -34,19 +40,19 @@
     * {
         font-family: Arial, sans-serif;
     }
-    p, input, li {
+    p {
         font-family: 'Open Sans Condensed', sans-serif;
         color: #2a2a2a;
     }
 
-    p, li {
+    p {
         font-size: 1.6rem;
         line-height: 1.5;
     }
 
     /* || header layout */
 
-    div[class="nav"], article, footer {
+    article, footer {
         background-color: #8FFF8F;
     }
 
@@ -58,71 +64,17 @@
         margin-right: 10px;
     }
 
-    div[class="nav"] {
-        height: 50px;
-        background-color: #8FFF8F;
-        display: flex;
-        padding: 1% 0;
-        margin-bottom: 10px;
-    }
-
-    div[class="nav"] ul {
-        padding: 0;
-        list-style-type: none;
-        flex: 2;
-        display: flex;
-    }
-
-    div[class="nav"] li {
-        display: inline;
-        text-align: center;
-        flex: 1;
-    }
-
-    div[class="nav"] a {
-        display: inline-block;
-        font-size: 2rem;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: #242424;
-    }
-
-    div[class="nav"] .search {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        height: 100%;
-        padding: 0 2em;
-    }
-
-    div[class="header"] {
+    .header {
         background-color: #444488;
         color: #E8E8E8;
     }
 
-    div[class="header"] H1 {
+    .header h1 {
         font-size: 4rem;
         text-align: center;
         color: white;
         text-shadow: 2px 2px 10px black;
         font-family: 'Sonsie One', cursive;
-    }
-
-    .search input {
-        font-size: 1.6rem;
-        height: 32px;
-    }
-
-    .search input[type="search"] {
-        flex: 3;
-    }
-
-    .search input[type="submit"] {
-        flex: 1;
-        margin-left: 1rem;
-        background: #333;
-        border: 0;
-        color: white;
     }
 
     main {
@@ -136,5 +88,4 @@
     footer {
         margin-top: 10px;
     }
-    .highlight { background-color: yellow; color: black; }
 </style>
