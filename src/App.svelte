@@ -24,11 +24,11 @@
     </article>
 
     <Secondary />
-
-    <footer>
-        <p>©Copyright by nobody (brother of somebody and anybody, member of Everybody family). All rights are NOT reserved.</p>
-    </footer>
 </main>
+
+<footer>
+    <p>©Copyright by nobody (brother of somebody and anybody, member of Everybody family). All rights are NOT reserved.</p>
+</footer>
 
 <style>
     * {
