@@ -1,5 +1,5 @@
 import {defineConfig} from "vite";
-import {svelte} from "@sveltejs/vite-plugin-svelte";
+import {sveltekit} from "@sveltejs/kit/vite";
 
 export default defineConfig({
     root: '.',
@@ -10,7 +10,7 @@ export default defineConfig({
         minify: 'esbuild',
     },
     plugins: [
-      svelte(),
+        sveltekit()
     ],
     server: {
         open: true
