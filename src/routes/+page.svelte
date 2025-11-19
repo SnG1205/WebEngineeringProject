@@ -7,7 +7,10 @@
     import Secondary from '../components/Secondary.svelte';
     import Table from '../components/Table.svelte';
 
-    let {data} = $props();
+    const fetchBears = async () => {
+        const response = await fetch('/bears');
+        return await response.json();
+    }
 </script>
 
 <div class="header">
@@ -28,7 +31,12 @@
         </aside>
 
         <CommentsSection />
-        <MoreBears {data}/>
+
+        {#await fetchBears()}
+            <h3> Loading bears...</h3>
+        {:then bears}
+            <MoreBears {bears}/>
+        {/await}
     </article>
 
     <Secondary />

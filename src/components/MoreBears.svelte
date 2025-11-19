@@ -1,10 +1,10 @@
 <script lang="ts">
-    let {data} = $props();
+    let {bears} = $props();
 </script>
 
 <section class="more_bears">
     <h3 tabindex="-1">More Bears</h3>
-    {#each data.bears as bear}
+    {#each bears as bear}
         <div class="bear">
             <img src={bear.imageUrl} alt="Image of {bear.nameMatch}">
             <p><b>{bear.nameMatch}</b> ({bear.binomialMatch})</p>
