@@ -81,7 +81,6 @@ const fetchImageUrl = async (fileName: string): Promise<string> => {
         const response = await fetch(url);
         const data = await response.json();
         const pages: WikiQueryResponse = data.query.pages;
-        console.log(pages);
         const pagesArray: WikiPage[] = Object.values(pages);
         const firstPage = pagesArray[0];
         return firstPage.imageinfo[0].url;

@@ -13,15 +13,17 @@ export const searchHighlighter = (searchQuery: string): void => {
 
   function walk(node: HTMLElement): void {
     if (node.nodeType === 3) {
-      // Text node
-      const match = node.nodeValue.match(regex);
-      if (match !== null) {
-        const span = document.createElement('span');
-        span.innerHTML = node.nodeValue.replace(
-          regex,
-          '<mark class="highlight">$1</mark>'
-        );
-        node.replaceWith(span);
+      const nodeString: string | null = node.nodeValue;
+      if (nodeString !== null) {
+        const match = nodeString.match(regex);
+        if (match !== null) {
+          const span = document.createElement('span');
+          span.innerHTML = nodeString.replace(
+            regex,
+            '<mark class="highlight">$1</mark>'
+          );
+          node.replaceWith(span);
+        }
       }
     } else if (
       node.nodeType === 1 &&
@@ -37,7 +39,11 @@ export const searchHighlighter = (searchQuery: string): void => {
 const clearHighlighters = (): void => {
   document.querySelectorAll('.highlight').forEach(function (el) {
     const parent = el.parentNode;
-    parent.replaceChild(document.createTextNode(el.textContent), el);
-    parent.normalize();
+    if (parent !== null) {
+      if (el.textContent != null) {
+        parent.replaceChild(document.createTextNode(el.textContent), el);
+      }
+      parent.normalize();
+    }
   });
 };
