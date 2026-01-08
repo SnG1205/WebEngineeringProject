@@ -8,7 +8,7 @@
     import Table from '../components/Table.svelte';
 
     const fetchBears = async () => {
-        const response = await fetch('/bears');
+        const response = await fetch('http://localhost:3000/bears');
         return await response.json();
     }
 </script>

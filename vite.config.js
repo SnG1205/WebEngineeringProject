@@ -3,7 +3,7 @@ import {sveltekit} from "@sveltejs/kit/vite";
 
 export default defineConfig({
     root: '.',
-    base: '/WebEngineeringProject/',
+    base: '',
     build: {
         outDir: 'dist',
         emptyOutDir: true,
