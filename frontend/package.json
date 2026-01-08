@@ -7,10 +7,10 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint modules/*.{js,ts}",
-    "lint:fix": "eslint modules/*.{js,ts} --fix",
-    "format": "prettier --write modules/*.{js,ts}",
-    "format:check": "prettier --check modules/*.{js,ts}",
+    "lint": "eslint frontend/modules/*.{js,ts}",
+    "lint:fix": "eslint frontend/modules/*.{js,ts} --fix",
+    "format": "prettier --write frontend/modules/*.{js,ts}",
+    "format:check": "prettier --check frontend/modules/*.{js,ts}",
     "prepare": "husky install"
   },
   "husky": {
